@@ -1,6 +1,12 @@
-// Question LINK: http://www.geeksforgeeks.org/dynamic-programming-set-3-longest-increasing-subsequence/
+// Question Link: http://www.geeksforgeeks.org/dynamic-programming-set-3-longest-increasing-subsequence/
 
 package dp;
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
 public class LIS {
 
     public static int LIS(int[] inputArray, int N){
@@ -29,20 +35,18 @@ public class LIS {
     }
 
     public static void main(String[] args) {
-        int[] inputArray = {10, 22, 9, 33, 21, 50, 41, 60};
-        System.out.println("Length of LIS is " + LIS(inputArray, inputArray.length));
-//        Scanner in = new Scanner(System.in);
-//        int T = in.nextInt();
-//        for(int i = 0; i < T; i++)
-//        {
-//            int N = in.nextInt();
-//            int arr[] = new int[N];
-//            for(int j = 0; j < N; j ++)
-//            {
-//                arr[j] = in.nextInt();
-//            }
-//            System.out.println(LIS(arr, N));
-//        }
+        Scanner in = new Scanner(System.in);
+        int T = in.nextInt();
+        for(int i = 0; i < T; i++)
+        {
+            int N = in.nextInt();
+            int arr[] = new int[N];
+            for(int j = 0; j < N; j ++)
+            {
+                arr[j] = in.nextInt();
+            }
+            System.out.println(LIS(arr, N));
+        }
     }
 
 }
