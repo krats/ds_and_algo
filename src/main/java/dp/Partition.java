@@ -1,4 +1,4 @@
-// Question Link: http://www.geeksforgeeks.org/dynamic-programming-set-3-longest-increasing-subsequence/
+// Question Link: http://www.geeksforgeeks.org/dynamic-programming-set-18-partition-problem/
 
 package dp;
 import java.io.*;
