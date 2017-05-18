@@ -6,12 +6,12 @@ public class BearPlaysDiv2 {
 	HashMap<Long, Boolean> dp;
 	long a,b,c;
 	boolean equalPilesRecursive(long a1, long b1, long c1) {
-		if(dp.get(a1*8192*8192+b1*8192+c1) != null)
+		if(dp.get(a1*2048*2048+b1*2048+c1) != null)
 			return false;
 		if(a1 == a && b1 == b && c1 == c)
 			return true;
 		boolean ans = false;
-		dp.put((a1*8192*8192+b1*8192+c1), true);
+		dp.put(a1*2048*2048+b1*2048+c1, true);
 		if(a1 % 2 == 0 && a1/2 < b1 + a1/2)
 		{
 			ans = ans || equalPilesRecursive(a1/2, b1+a1/2, c1);
