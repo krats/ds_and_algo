@@ -1,0 +1,30 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td>A string S is a subsequence of a string T if we can obtain S from T by erasing some (possibly all or none) of its characters. For example, "000" is a subsequence of "01010".
+<br></br>
+<br></br>
+The longest common subsequence (LCS) of two strings A and B is a string C that is a subsequence of each of them and has the largest length among all strings with this property. Let f(A,B) be the length of the LCS of strings A and B. For example, we have f("101", "111000") = 2, f("101", "110011") = 3, and f("00", "1111") = 0.
+<br></br>
+<br></br>
+You are given three small positive integers <b>ab</b>, <b>bc</b>, and <b>ca</b>.
+Please find three strings A, B, C such that:
+<ul>
+<li>Each of the strings contains only the characters '0' and '1'.</li>
+<li>The length of each string is between 1 and 1,000, inclusive.</li>
+<li>f(A, B) = <b>ab</b></li>
+<li>f(B, C) = <b>bc</b></li>
+<li>f(C, A) = <b>ca</b></li>
+</ul>
+
+Return a String formed as follows: A + " " + B + " " + C.
+(I.e., the returned string should contain the three strings A, B, C, separated by single spaces.)
+<br></br>
+<br></br>
+You may assume that a solution always exist.
+If there are multiple solutions you may return any of them.</td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>ConstructLCSEasy</td></tr><tr><td>Method:</td><td>construct</td></tr><tr><td>Parameters:</td><td>int, int, int</td></tr><tr><td>Returns:</td><td>String</td></tr><tr><td>Method signature:</td><td>String construct(int ab, int bc, int ca)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td colspan="2"><h3>Limits</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Time limit (s):</td><td>2.000</td></tr><tr><td>Memory limit (MB):</td><td>256</td></tr><tr><td>Stack limit (MB):</td><td>256</td></tr></table></td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>ab</b> will be between 1 and 50, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td><b>bc</b> will be between 1 and 50, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td><b>ca</b> will be between 1 and 50, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td><b>ab</b> &lt;= <b>bc</b> &lt;= <b>ca</b>.</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>2</pre></td></tr><tr><td><pre>3</pre></td></tr><tr><td><pre>4</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;1111 101 1010101&quot;</pre></td></tr><tr><td><table><tr><td colspan="2">The returned string corresponds to the following solution:
+<ul>
+<li>A = "1111"</li>
+<li>B = "101"</li>
+<li>C = "1010101"</li>
+</ul>
+
+We can easily verify that the only LCS of A and B is "11", the only LCS of B and C is "101", and the only LCS of C and A is "1111".</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>4</pre></td></tr><tr><td><pre>4</pre></td></tr><tr><td><pre>7</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;10101010 1011 1010101&quot;</pre></td></tr><tr><td><table><tr><td colspan="2">Another solution is: a = "0000111", b = "0000", c = "0000111".</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>6</pre></td></tr><tr><td><pre>7</pre></td></tr><tr><td><pre>8</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;10101010 1111010 110101010&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>7</pre></td></tr><tr><td><pre>8</pre></td></tr><tr><td><pre>8</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;10101010 010101101 110101001011&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">4)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>15</pre></td></tr><tr><td><pre>17</pre></td></tr><tr><td><pre>19</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;000100101101111011000 11110111010011101010 100100001010101001010101000011111&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">5)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>50</pre></td></tr><tr><td><pre>50</pre></td></tr><tr><td><pre>50</pre></td></tr></table></td></tr><tr><td><pre>Returns: 
+&quot;11111111111111111111111111111111111111111111111111 11111111111111111111111111111111111111111111111111 11111111111111111111111111111111111111111111111111&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>
