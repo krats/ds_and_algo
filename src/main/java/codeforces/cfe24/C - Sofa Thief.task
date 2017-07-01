@@ -1,0 +1,52 @@
+14 C - Sofa Thief
+6 SINGLE
+8 STANDARD
+-1
+8 STANDARD
+-1
+3
+0
+30 2
+3 2
+3 1 3 2
+1 2 2 2
+1 0 0 1
+
+2 1
+
+1
+1
+40 3
+10 10
+1 2 1 1
+5 5 6 5
+6 4 5 4
+2 1 2 0
+
+2 2
+
+1
+2
+30 2
+2 2
+2 1 1 1
+1 2 2 2
+1 0 0 0
+
+3 -1
+
+1
+30 src/main/java/codeforces/cfe24
+8 -Xmx256M
+4 Main
+22 codeforces.cfe24.TaskC
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2017.06.29
+31 Educational Codeforces Round 24
+1
+17 java.util.Scanner
+19 java.io.PrintWriter
+0
+0

@@ -1,0 +1,35 @@
+20 B - Permutation Game
+6 SINGLE
+8 STANDARD
+-1
+8 STANDARD
+-1
+2
+0
+14 4 5
+2 3 1 4 4
+
+9 3 1 2 4 
+
+1
+1
+10 3 3
+3 1 2
+
+3 -1
+
+1
+30 src/main/java/codeforces/cfe24
+8 -Xmx256M
+4 Main
+22 codeforces.cfe24.TaskB
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2017.06.29
+31 Educational Codeforces Round 24
+1
+17 java.util.Scanner
+19 java.io.PrintWriter
+0
+0

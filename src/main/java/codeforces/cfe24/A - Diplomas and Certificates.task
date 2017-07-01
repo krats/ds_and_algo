@@ -1,0 +1,45 @@
+29 A - Diplomas and Certificates
+6 SINGLE
+8 STANDARD
+-1
+8 STANDARD
+-1
+4
+0
+5 18 2
+
+6 3 6 9
+
+1
+1
+5 9 10
+
+6 0 0 9
+
+1
+2
+16 1000000000000 5
+
+38 83333333333 416666666665 500000000002
+
+1
+3
+27 1000000000000 499999999999
+
+28 1 499999999999 500000000000
+
+1
+30 src/main/java/codeforces/cfe24
+8 -Xmx256M
+4 Main
+22 codeforces.cfe24.TaskA
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2017.06.29
+31 Educational Codeforces Round 24
+1
+17 java.util.Scanner
+19 java.io.PrintWriter
+0
+0

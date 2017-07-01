@@ -1,0 +1,26 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><p>
+Alice has a string <b>s</b> of lowercase letters.
+The string is written on a wall.
+</p>
+
+<p>
+Alice also has a set of cards.
+Each card contains a single letter.
+Alice can take any card and glue it on top of one of the letters of <b>s</b>.
+She may use any subset of cards in this way, possibly none or all of them.
+She is not allowed to glue new letters in front of <b>s</b> or after <b>s</b>, she can only replace the existing letters.
+</p>
+
+<p>
+Alice wants to produce the lexicographically largest possible string.
+</p>
+
+<p>
+You are given the String <b>s</b>.
+You are also given a String <b>t</b>.
+Each character of <b>t</b> is a letter written on one of the cards.
+Compute and return the lexicographically largest string Alice can produce on the wall while following the rules described above.
+</p></td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>LexmaxReplace</td></tr><tr><td>Method:</td><td>get</td></tr><tr><td>Parameters:</td><td>String, String</td></tr><tr><td>Returns:</td><td>String</td></tr><tr><td>Method signature:</td><td>String get(String s, String t)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td colspan="2"><h3>Limits</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Time limit (s):</td><td>2.000</td></tr><tr><td>Memory limit (MB):</td><td>512</td></tr><tr><td>Stack limit (MB):</td><td>512</td></tr></table></td></tr><tr><td colspan="2"><h3>Notes</h3></td></tr><tr><td align="center" valign="top">-</td><td>Given two distinct strings X and Y of the same length, the lexicographically larger one is the one that has a larger character on the first position on which they differ.</td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>s</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td><b>t</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td><b>s</b> will contain only lowercase English letters ('a' - 'z').</td></tr><tr><td align="center" valign="top">-</td><td><b>t</b> will contain only lowercase English letters ('a' - 'z').</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;abb&quot;</pre></td></tr><tr><td><pre>&quot;c&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;cbb&quot;</pre></td></tr><tr><td><table><tr><td colspan="2">Alice has a single card.
+This card contains the letter 'c'.
+The optimal solution is to glue it on top of <b>s</b>[0], producing the string "cbb".
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;z&quot;</pre></td></tr><tr><td><pre>&quot;f&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;z&quot;</pre></td></tr><tr><td><table><tr><td colspan="2">Here the optimal solution is to do nothing. The card with the letter 'f' will remain unused.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;fedcba&quot;</pre></td></tr><tr><td><pre>&quot;ee&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;feeeba&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;top&quot;</pre></td></tr><tr><td><pre>&quot;coder&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;trp&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">4)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;xldyzmsrrwzwaofkcxwehgvtrsximxgdqrhjthkgfucrjdvwlr&quot;</pre></td></tr><tr><td><pre>&quot;xfpidmmilhdfzypbguentqcojivertdhshstkcysydgcwuwhlk&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: &quot;zyyyzyxwwwzwvuuttxwtssvtssxrqxppqrontmmllukrkjvwlr&quot;</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>
