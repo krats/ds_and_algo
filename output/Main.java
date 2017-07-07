@@ -2,8 +2,9 @@ import java.io.OutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
-import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Collections;
+import java.util.ArrayList;
 
 /**
  * Built using CHelper plug-in
@@ -19,97 +20,70 @@ public class Main {
 		solver.solve(1, in, out);
 		out.close();
 	}
-	
+
 	static class TaskC {
 		public void solve(int testNumber, Scanner in, PrintWriter out) {
-			int numOfSofas = in.nextInt();
 			int n = in.nextInt();
-			int m = in.nextInt();
-			Sofa[] sofas = new Sofa[numOfSofas];
-			int x1, y1, x2, y2;
-			for (int i = 0; i < numOfSofas; i++) {
-				x1 = in.nextInt();
-				y1 = in.nextInt();
-				x2 = in.nextInt();
-				y2 = in.nextInt();
-				sofas[i] = new Sofa(x1, y1, x2, y2, i);
+			int x = in.nextInt();
+			ArrayList<Range> ranges = new ArrayList<>(n);
+			for (int i = 0; i < n; i++)
+				ranges.add(new Range(in.nextInt(), in.nextInt(), in.nextInt()));
+			Collections.sort(ranges);
+			int l = 0;
+			int ans = Integer.MAX_VALUE;
+			int r = ranges.size() - 1;
+			while (l < r) {
+				if (ranges.get(l).len + ranges.get(r).len == x) {
+					if (ranges.get(l).x > ranges.get(r).y || ranges.get(r).x > ranges.get(l).y) {
+						ans = Math.min(ranges.get(l).cost + ranges.get(r).cost, ans);
+					}
+					for (int i = l + 1; i < ranges.size(); i++) {
+						if (ranges.get(l).len == ranges.get(i).len) {
+							if (ranges.get(i).x > ranges.get(r).y || ranges.get(r).x > ranges.get(i).y)
+								ans = Math.min(ranges.get(i).cost + ranges.get(r).cost, ans);
+						} else {
+							l = i - 1;
+							break;
+						}
+					}
+					for (int i = r - 1; i >= 0; i--) {
+						if (ranges.get(r).len == ranges.get(i).len) {
+							if (ranges.get(l).x > ranges.get(i).y || ranges.get(i).x > ranges.get(l).y)
+								ans = Math.min(ranges.get(i).cost + ranges.get(l).cost, ans);
+						} else {
+							r = i + 1;
+							break;
+						}
+					}
+					l++;
+					r--;
+				} else if (ranges.get(l).len + ranges.get(r).len < x)
+					l++;
+				else
+					r--;
 			}
-			Arrays.sort(sofas);
-			int cl = in.nextInt();
-			int cr = in.nextInt();
-			int ct = in.nextInt();
-			int cb = in.nextInt();
-			int ans = -1;
-			for (int i = 0; i < numOfSofas - 1; i++) {
-				int j = i + 1;
-				if (sofas[i].x1 < sofas[j].x1 || sofas[i].x2 < sofas[j].x2) {
-					sofas[j].cl++;
-				} else if (sofas[i].x1 > sofas[j].x1 || sofas[i].x2 > sofas[j].x2) {
-					sofas[j].cr++;
-				}
-			}
-			for (int i = 0; i < numOfSofas - 1; i++) {
-				sofas[i].cl += sofas[i + 1].cl;
-				sofas[i].cr += sofas[i + 1].cr;
-			}
-			Arrays.sort(sofas);
-			for (int i = 0; i < numOfSofas - 1; i++) {
-				int j = i + 1;
-				if (sofas[i].y1 < sofas[j].y1 || sofas[i].y2 < sofas[j].y2) {
-					sofas[j].cb++;
-				} else if (sofas[i].x1 > sofas[j].x1 || sofas[i].x2 > sofas[j].x2) {
-					sofas[j].ct++;
-				}
-			}
-			for (int i = 0; i < numOfSofas - 1; i++) {
-				sofas[i].cb += sofas[i + 1].cb;
-				sofas[i].ct += sofas[i + 1].ct;
-			}
-			for (int i = 0; i < numOfSofas - 1; i++) {
-				if (sofas[i].cl == cl && sofas[i].cr == cr && sofas[i].ct == ct && sofas[i].cb == cb) {
-					ans = sofas[i].i + 1;
-				}
-			}
-			out.println(ans);
+			out.println(ans == Integer.MAX_VALUE ? -1 : ans);
 		}
-		
-		class Sofa implements Comparable<Sofa> {
-			int x1;
-			int y1;
-			int x2;
-			int y2;
-			int i;
-			int k;
-			int cl = 0;
-			int cr = 0;
-			int ct = 0;
-			int cb = 0;
-			
-			public Sofa(int x1, int x2, int x3, int x4, int i) {
-				this.x1 = x1;
-				this.y1 = x2;
-				this.x2 = x3;
-				this.y2 = x4;
-				this.i = i;
-				this.k = 0;
+
+		class Range implements Comparable<Range> {
+			int x;
+			int y;
+			int cost;
+			int len;
+
+			public Range(int x, int y, int cost) {
+				this.x = x;
+				this.y = y;
+				this.cost = cost;
+				this.len = y - x + 1;
 			}
-			
-			public int compareTo(Sofa b) {
-				if (k == 0) {
-					if (x1 != b.x1)
-						return x1 - b.x1;
-					else
-						return x2 - b.x2;
-				} else {
-					if (y1 != b.y1)
-						return y1 - b.y1;
-					else
-						return y2 - b.y2;
-				}
+
+			public int compareTo(Range b) {
+				return this.len - b.len;
 			}
-			
+
 		}
-		
+
 	}
 }
 

@@ -1,3 +1,2 @@
-50 src/main/java/codeforces/cfe24/C - Sofa Thief.task
-1
+63 src/main/java/codeforces/cf422/C - Hacker, pack your bags!.task
 0
