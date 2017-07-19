@@ -1,2 +1,2 @@
-63 src/main/java/codeforces/cf422/C - Hacker, pack your bags!.task
+56 src/main/java/codeforces/cf423div2/B - Black Square.task
 0
